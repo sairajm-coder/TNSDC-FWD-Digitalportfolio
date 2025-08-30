@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sairaj M | Portfolio</title>
+  <link rel="icon" href="icon.jpg">
+  <style>
+    /* Base Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #f0f0f0;
+      line-height: 1.6;
+      padding: 20px;
+      transition: all 0.4s ease;
+    }
+
+    a {
+      color: #00ffff;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    /* Navbar */
+    nav {
+      background: #1c1f26;
+      padding: 15px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      font-size: 16px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    /* Dark/Light Toggle Button */
+    .toggle-btn {
+      background: none;
+      border: 2px solid #00ffff;
+      color: #00ffff;
+      font-size: 18px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .toggle-btn:hover {
+      background: #00ffff;
+      color: #000;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 40px;
+    }
+
+    .hero img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 3px solid #00ffff;
+    }
+
+    .hero-text {
+      flex: 1;
+      margin-left: 30px;
+    }
+
+    .hero-text h1 {
+      font-size: 36px;
+      color: #00ffff;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h2 {
+      font-size: 20px;
+      color: #cccccc;
+      min-height: 30px; /* To prevent jump when typing */
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 28px;
+      color: #00ffff;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #00ffff;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .aligned-box {
+      padding-left: 5ch;
+      padding-right: 5ch;
+      border-left: 2px solid #00ffff;
+      border-right: 2px solid #00ffff;
+    }
+
+    .contact {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 2px solid #00ffff;
+      border-radius: 10px;
+      background-color: #1c1f26;
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 10px 0;
+    }
+
+    /* Light Mode Styles */
+    body.light-mode {
+      background: #f9f9f9;
+      color: #111;
+    }
+
+    body.light-mode nav {
+      background: #fff;
+      border: 1px solid #ddd;
+    }
+
+    body.light-mode .section-title {
+      color: #0077cc;
+      border-bottom: 2px solid #0077cc;
+    }
+
+    body.light-mode a {
+      color: #0077cc;
+    }
+
+    body.light-mode .toggle-btn {
+      border: 2px solid #0077cc;
+      color: #0077cc;
+    }
+
+    body.light-mode .toggle-btn:hover {
+      background: #0077cc;
+      color: #fff;
+    }
+
+    body.light-mode .contact {
+      background: #fff;
+      border: 2px solid #0077cc;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .hero-text {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- Navbar -->
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="toggle-btn" id="mode-toggle">🌙</button>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero" id="about">
+      <img src="photo.jpg" alt="Sairaj's Photo">
+      <div class="hero-text">
+        <h1>SAIRAJ M</h1>
+        <h2 id="typing-text"></h2>
+      </div>
+    </div>
+
+    <!-- Academic Profile -->
+    <div class="section">
+      <div class="section-title">Academic Profile</div>
+      <ul>
+        <li><strong>Mazharul Uloom College</strong><br>
+        B.Sc. Computer Science (2023 – Present)<br>
+        Actively engaging with both theoretical computer science and real-world programming paradigms.</li><br>
+        <li><strong>Bethel Matriculation Higher Secondary School</strong><br>
+        Higher Secondary School (2021 – 2023) – Computer Science<br>
+        Laid the foundation of logical reasoning, C++ problem-solving, and academic excellence.</li>
+      </ul>
+    </div>
+
+    <!-- Skills -->
+    <div class="section" id="skills">
+      <div class="section-title">Technical Skill Set</div>
+      <ul>
+        <li><strong>Languages:</strong> C, C++ (OOP and data structures), Python (automation and basic scripting), JavaScript (DOM manipulation)</li>
+        <li><strong>Frontend Toolkit:</strong> HTML5, CSS3 (Flexbox/Grid), JavaScript ES6+, React.js, Tailwind CSS, Bootstrap</li>
+        <li><strong>App Development:</strong> Android Studio (Java/Kotlin basics), Exploring Flutter for cross-platform UI</li>
+        <li><strong>Tools & Technologies:</strong> Git & GitHub, VS Code, Turbo C++, Figma, Canva, APIs & JSON</li>
+      </ul>
+    </div>
+
+    <!-- Projects -->
+    <div class="section" id="projects">
+      <div class="section-title">Projects & Implementations</div>
+      <ul>
+        <li><strong>🖥️ Personal Portfolio Website:</strong> An evolving digital representation of my journey, skills, and projects.</li>
+        <li><strong>Mobile Calculator App (Android Studio):</strong> Functional calculator with animated UI elements, clean button interactions, currently being redesigned in Flutter.</li>
+      </ul>
+    </div>
+
+    <!-- Certifications -->
+    <div class="section" id="certifications">
+      <div class="section-title">Certifications</div>
+      <ul>
+        <li>IBM: Frontend web development </li>
+        <li>Microsoft: AI for Beginners </li>
+        <li>Greatlearning: python with AI </li>
+        <li>Additional certifications in cybersecurity and blockchain are part of learning path</li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="section" id="contact">
+      <div class="section-title">Contact</div>
+      <div class="contact">
+        <p><strong>📞 Phone:</strong> +91 9080843324</p>
+        <p><strong>📧 Email:</strong> <a href="mailto:sairajmit23@gmail.com">sairajmit23@gmail.com</a></p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Typing effect
+    const text = "Computer Science Undergraduate & Frontend Developer";
+    let i = 0;
+    function typingEffect() {
+      if (i < text.length) {
+        document.getElementById("typing-text").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 100);
+      }
+    }
+    typingEffect();
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+        });
+      });
+    });
+
+    // Dark/Light Mode Toggle
+    const toggleBtn = document.getElementById("mode-toggle");
+    toggleBtn.addEventListener("click", () => {
+      document.body.classList.toggle("light-mode");
+      toggleBtn.textContent = document.body.classList.contains("light-mode") ? "☀️" : "🌙";
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
